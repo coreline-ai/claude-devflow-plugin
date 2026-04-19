@@ -75,7 +75,28 @@ when_to_use: |
 - Edge Cases & Risks
 - Execution Rules
 
-### Step 5: 저장 및 보고
+### Step 5: 엔지니어링 리뷰
+
+계획서 생성 후, 구현 전에 리뷰를 수행한다:
+
+1. **자체 검증**: 계획서를 `code-review` 스킬의 Plan mode 기준으로 자체 점검한다.
+   - 아키텍처 정합성, 소유권 경계, 엣지케이스, 보안, 테스트 전략
+2. **Engineering Review 섹션 추가**: 계획서에 다음 테이블을 포함한다:
+
+```md
+## Engineering Review
+
+| 항목 | 판정 | 메모 |
+|---|---|---|
+| 아키텍처 | ready / needs revision / blocked | ... |
+| 공유 계약 | ready / needs revision / blocked | ... |
+| 엣지케이스 | ready / needs revision / blocked | ... |
+| 테스트 전략 | ready / needs revision / blocked | ... |
+```
+
+3. **심층 리뷰 필요 시**: 사용자에게 `/code-review [plan-file-path]`로 별도 리뷰를 안내한다.
+
+### Step 6: 저장 및 보고
 
 1. 프로젝트에 `docs/` 디렉토리가 있으면 → `docs/impl-plan-[feature-name].md`
 2. 없으면 → 프로젝트 루트에 `impl-plan-[feature-name].md`

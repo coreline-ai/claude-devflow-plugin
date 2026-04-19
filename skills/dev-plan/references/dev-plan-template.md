@@ -101,20 +101,33 @@ Phase 0 (기반) → Phase 1 + Phase 2 (병렬 가능) → Phase 3 (통합)
 
 ---
 
-## 5. Integration & Verification (통합 검증)
+## 5. Engineering Review (엔지니어링 리뷰)
 
-### 5.1 Integration Test Plan
+| 항목 | 판정 | 메모 |
+|---|---|---|
+| 아키텍처 | ready / needs revision / blocked | ... |
+| 공유 계약 | ready / needs revision / blocked | ... |
+| 엣지케이스 | ready / needs revision / blocked | ... |
+| 테스트 전략 | ready / needs revision / blocked | ... |
+
+> 심층 리뷰가 필요하면 `/code-review [이 파일 경로]`를 실행한다.
+
+---
+
+## 6. Integration & Verification (통합 검증)
+
+### 6.1 Integration Test Plan
 - [ ] [E2E 시나리오 1]
 
-### 5.2 Manual Verification Steps
+### 6.2 Manual Verification Steps
 1. [Step 1: 구체적 동작]
 
-### 5.3 Rollback Strategy
+### 6.3 Rollback Strategy
 - [문제 발생 시 되돌리는 방법]
 
 ---
 
-## 6. Edge Cases & Risks (엣지 케이스 및 위험)
+## 7. Edge Cases & Risks (엣지 케이스 및 위험)
 
 | 위험 요소 | 영향도 | 완화 방안 |
 |-----------|--------|-----------|
@@ -122,7 +135,7 @@ Phase 0 (기반) → Phase 1 + Phase 2 (병렬 가능) → Phase 3 (통합)
 
 ---
 
-## 7. Execution Rules (실행 규칙)
+## 8. Execution Rules (실행 규칙)
 
 1. 각 Phase는 독립적으로 구현하고 테스트한다
 2. 모든 태스크 체크박스 체크 + 모든 테스트 통과 = 완료
