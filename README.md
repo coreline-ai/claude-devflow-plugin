@@ -24,11 +24,13 @@
   Plan          Execute         Fix & Verify     Review          Ship
 ┌─────────┐   ┌───────────┐   ┌─────────────┐  ┌───────────┐  ┌───────────┐
 │dev-plan  │─▶│parallel-  │─▶│ test-fix-   │─▶│ code-     │─▶│ release-  │
-│          │  │dev        │  │ loop        │  │ review    │  │ docs      │
-└─────────┘  └───────────┘  └─────────────┘  └───────────┘  └───────────┘
-                  ▲                                              
-            worktree         ═══════════════════════════════════
-            isolation         safety hook (항상 활성, 모든 단계 보호)
+│ +review  │  │dev        │  │ loop        │  │ review    │  │ docs      │
+└────┬─────┘  └───────────┘  └─────────────┘  └───────────┘  └───────────┘
+     │            ▲                                              
+     └──── eng review         ═══════════════════════════════════
+          (self-check)         safety hook (항상 활성, 모든 단계 보호)
+       + /code-review
+         (심층 리뷰)      worktree isolation
 ```
 
 각 스킬은 **독립 설치** 가능하며, 함께 사용하면 계획부터 배포까지 체계적으로 관리할 수 있습니다.
@@ -39,13 +41,14 @@
 
 ### 1. `dev-plan`
 
-> 페이즈별 체크박스 기반 구현 계획서 생성
+> 페이즈별 체크박스 기반 구현 계획서 생성 + 엔지니어링 리뷰
 
 | 항목 | 내용 |
 |---|---|
 | **트리거** | `개발 계획`, `구현 계획`, `dev plan`, `implement_*.md` |
-| **출력** | `docs/impl-plan-[feature].md` |
-| **핵심** | Context → Architecture → Phase(Tasks+Tests+Criteria) → Integration → Risks |
+| **출력** | `docs/impl-plan-[feature].md` (Engineering Review 섹션 포함) |
+| **핵심** | Context → Architecture → Phases → **Engineering Review** → Integration → Risks |
+| **리뷰 연계** | 자체 Plan mode 검증 + 심층 리뷰 시 `/code-review` 안내 |
 
 ### 2. `parallel-dev`
 
