@@ -1,5 +1,7 @@
 <div align="center">
 
+<img width="800" height="450" alt="지능형 코딩 플러그인 기능 안내" src="https://github.com/user-attachments/assets/d0a40489-dcc5-466a-a8ab-261c37897e40" />
+
 # claude-devflow-plugin
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE.md)
